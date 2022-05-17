@@ -2,6 +2,7 @@ package stepDefinitions;
 
 import managers.DriverManager;
 import org.openqa.selenium.WebDriver;
+import pageObjects.SauceDemoCartPage;
 import pageObjects.SauceDemoLoginPage;
 import pageObjects.SauceDemoMenuPage;
 import pageObjects.SauceDemoProductsPage;
@@ -20,6 +21,7 @@ public class TestBase {
     public static SauceDemoLoginPage sauceDemoLoginPage;
     public static SauceDemoMenuPage sauceDemoMenuPage;
     public static SauceDemoProductsPage sauceDemoProductsPage;
+    public static SauceDemoCartPage sauceDemoCartPage;
     public static Parsers parsers = new Parsers();
 
     public static void navigateToSauceDemo() throws Exception {
@@ -33,6 +35,7 @@ public class TestBase {
         sauceDemoLoginPage = new SauceDemoLoginPage(sauceDemoDriver);
         sauceDemoMenuPage = new SauceDemoMenuPage(sauceDemoDriver);
         sauceDemoProductsPage = new SauceDemoProductsPage(sauceDemoDriver);
+        sauceDemoCartPage = new SauceDemoCartPage(sauceDemoDriver);
         DriverManager.populateMap();
     }
 }
