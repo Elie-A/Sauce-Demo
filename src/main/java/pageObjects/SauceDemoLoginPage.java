@@ -38,4 +38,12 @@ public class SauceDemoLoginPage extends PageObjectManager {
     public boolean isOnProductsPage(String page){
         return isElementDisplayed(title);
     }
+
+    public boolean isDriverRunning(){
+        return driver != null;
+    }
+
+    public void killDriver(boolean isRunning){
+        if(isRunning) killDriverInstance();
+    }
 }

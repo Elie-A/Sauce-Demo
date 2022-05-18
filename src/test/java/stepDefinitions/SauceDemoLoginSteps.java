@@ -1,5 +1,6 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import managers.DriverManager;
@@ -29,11 +30,33 @@ public class SauceDemoLoginSteps extends TestBase{
             case "Products":
                 Assert.assertTrue(sauceDemoLoginPage.isOnProductsPage(page), "User is not on " + page + " page");
                 break;
+            case "You Cart":
+                Assert.assertTrue(sauceDemoCartPage.isOnCartPage(page), "User is not on " + page + " page");
+                break;
+            case "Checkout: Your Information":
+                Assert.assertTrue(sauceDemoCheckoutPage.isOnCheckoutPage(page), "User is not on " + page + " page");
+                break;
+            case "Checkout: Overview":
+                Assert.assertTrue(sauceDemoCheckoutOverviewPage.isOnCheckoutOverviewPage(page), "User is not on " + page + " page");
+                break;
+            case "Checkout: Complete!":
+                Assert.assertTrue(sauceDemoCheckoutCompletePage.isOnCheckoutCompletePage(page), "User is not on " + page + " page");
+                break;
 
             default:
                 System.out.println("Invalid page");
                 break;
         }
+    }
+
+    @Given("driver instance is running")
+    public void driverInstanceIsRunning() {
+        driverInstanceRunning = sauceDemoLoginPage.isDriverRunning();
+    }
+
+    @Then("user kills driver instance")
+    public void userKillsDriverInstance() {
+        sauceDemoLoginPage.killDriver(driverInstanceRunning);
     }
 
 }

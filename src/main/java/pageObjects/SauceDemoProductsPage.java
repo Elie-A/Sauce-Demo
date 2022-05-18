@@ -8,12 +8,22 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import utilities.applicationUtilities.MiscellaneousApplicationUtilities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SauceDemoProductsPage extends PageObjectManager {
 
     @FindBy(className = "product_sort_container")
     WebElement dropdown;
+
+    @FindBy(className = "shopping_cart_badge")
+    WebElement totalInCart;
+
+    @FindBy(className = "shopping_cart_link")
+    WebElement shoppingCart;
+
+    public static List<String> listOfProductInCart = new ArrayList<>();
+    public static List<Float> listOfPricesInCart = new ArrayList<>();
 
     public SauceDemoProductsPage(WebDriver driver){ super(driver); }
 
@@ -35,5 +45,31 @@ public class SauceDemoProductsPage extends PageObjectManager {
             default:
                 return true;
         }
+    }
+
+    public void clickOnAddRemoveProductToFromCart(String text, String total){
+        int totalProducts = Integer.parseInt(total);
+        List<WebElement> list = driver.findElements(By.xpath("//button[text()='"+text+"']"));
+        List<WebElement> listNames = driver.findElements(By.className("inventory_item_name"));
+        List<WebElement> prices = driver.findElements(By.className("inventory_item_price"));
+        for(int i = 0; i < totalProducts; i++){
+            if(text.toLowerCase().trim().contains("add")){
+                clickElement(list.get(i));
+                listOfProductInCart.add(listNames.get(i).getText().trim());
+                listOfPricesInCart.add(Float.valueOf(prices.get(i).getText().trim().replace("$", "")));
+            }else{
+                clickElement(list.get(i));
+                listOfProductInCart.remove(listNames.get(i).getText().trim());
+                listOfPricesInCart.remove(Float.valueOf(prices.get(i).getText().trim().replace("$", "")));
+            }
+        }
+    }
+
+    public boolean validateTotalInCart(int requiredTotal){
+        return Integer.parseInt(totalInCart.getText()) == requiredTotal;
+    }
+
+    public void clickShoppingCart(){
+        clickElement(shoppingCart);
     }
 }

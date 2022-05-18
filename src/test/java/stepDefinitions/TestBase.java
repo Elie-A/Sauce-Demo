@@ -2,9 +2,7 @@ package stepDefinitions;
 
 import managers.DriverManager;
 import org.openqa.selenium.WebDriver;
-import pageObjects.SauceDemoLoginPage;
-import pageObjects.SauceDemoMenuPage;
-import pageObjects.SauceDemoProductsPage;
+import pageObjects.*;
 import utilities.applicationUtilities.Parsers;
 
 import org.apache.logging.log4j.Logger;
@@ -20,6 +18,11 @@ public class TestBase {
     public static SauceDemoLoginPage sauceDemoLoginPage;
     public static SauceDemoMenuPage sauceDemoMenuPage;
     public static SauceDemoProductsPage sauceDemoProductsPage;
+    public static SauceDemoCartPage sauceDemoCartPage;
+    public static SauceDemoCheckoutPage sauceDemoCheckoutPage;
+    public static SauceDemoCheckoutOverviewPage sauceDemoCheckoutOverviewPage;
+    public static SauceDemoCheckoutCompletePage sauceDemoCheckoutCompletePage;
+
     public static Parsers parsers = new Parsers();
 
     public static void navigateToSauceDemo() throws Exception {
@@ -33,6 +36,10 @@ public class TestBase {
         sauceDemoLoginPage = new SauceDemoLoginPage(sauceDemoDriver);
         sauceDemoMenuPage = new SauceDemoMenuPage(sauceDemoDriver);
         sauceDemoProductsPage = new SauceDemoProductsPage(sauceDemoDriver);
+        sauceDemoCartPage = new SauceDemoCartPage(sauceDemoDriver);
+        sauceDemoCheckoutPage = new SauceDemoCheckoutPage(sauceDemoDriver);
+        sauceDemoCheckoutOverviewPage = new SauceDemoCheckoutOverviewPage(sauceDemoDriver);
+        sauceDemoCheckoutCompletePage = new SauceDemoCheckoutCompletePage(sauceDemoDriver);
         DriverManager.populateMap();
     }
 }
