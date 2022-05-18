@@ -23,6 +23,7 @@ public class SauceDemoProductsPage extends PageObjectManager {
     WebElement shoppingCart;
 
     public static List<String> listOfProductInCart = new ArrayList<>();
+    public static List<Float> listOfPricesInCart = new ArrayList<>();
 
     public SauceDemoProductsPage(WebDriver driver){ super(driver); }
 
@@ -50,13 +51,16 @@ public class SauceDemoProductsPage extends PageObjectManager {
         int totalProducts = Integer.parseInt(total);
         List<WebElement> list = driver.findElements(By.xpath("//button[text()='"+text+"']"));
         List<WebElement> listNames = driver.findElements(By.className("inventory_item_name"));
+        List<WebElement> prices = driver.findElements(By.className("inventory_item_price"));
         for(int i = 0; i < totalProducts; i++){
             if(text.toLowerCase().trim().contains("add")){
                 clickElement(list.get(i));
                 listOfProductInCart.add(listNames.get(i).getText().trim());
+                listOfPricesInCart.add(Float.valueOf(prices.get(i).getText().trim().replace("$", "")));
             }else{
                 clickElement(list.get(i));
                 listOfProductInCart.remove(listNames.get(i).getText().trim());
+                listOfPricesInCart.remove(Float.valueOf(prices.get(i).getText().trim().replace("$", "")));
             }
         }
     }

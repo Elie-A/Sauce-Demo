@@ -13,10 +13,17 @@ public class SauceDemoCartPage extends PageObjectManager {
     @FindBy(className = "title")
     List<WebElement> title;
 
+    @FindBy(id = "checkout")
+    WebElement checkout;
+
     public SauceDemoCartPage(WebDriver driver){ super(driver); }
 
     public boolean isOnCartPage(String page){
         return isElementDisplayed(title);
+    }
+
+    public void clickCheckOut(){
+        clickElement(checkout);
     }
 
     public boolean validateItemsInCart(List<String> expectedItems){
