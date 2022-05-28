@@ -5,8 +5,13 @@ Sauce Demo automation
 ## Description
 
 This project is the automation of https://www.saucedemo.com/ website.
-The main purpose of this project is to ramp up on the automation using Selenium, cucumber, TestNG reports and Java.
-In addition to familiarize oneself with the Page Object Manager (POM) design pattern.
+
+## Architecture
+* Page Object Manager (POM) design pattern
+* Test cases written in Gherkin
+* Selenium
+* Cucumber
+* BDD
 
 ### Dependencies
 
