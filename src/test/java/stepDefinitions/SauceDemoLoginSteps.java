@@ -30,7 +30,7 @@ public class SauceDemoLoginSteps extends TestBase{
             case "Products":
                 Assert.assertTrue(sauceDemoLoginPage.isOnProductsPage(page), "User is not on " + page + " page");
                 break;
-            case "You Cart":
+            case "Your Cart":
                 Assert.assertTrue(sauceDemoCartPage.isOnCartPage(page), "User is not on " + page + " page");
                 break;
             case "Checkout: Your Information":
