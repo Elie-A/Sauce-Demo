@@ -1,6 +1,13 @@
 @StandardUser
 Feature: Sauce Demo Products Page - Standard User
 
+  #Mario Start
+  Scenario: Login to Sauce Demo With Valid Standard User Credentials
+    Given user logs in to sauce demo with "standard user" credentials
+    Then user is on the "Products" page
+  #Mario End
+
+
   Scenario Outline: Sort Products - Standard User
     Given user is on the "Products" page
     When user selects "<sort>" from the dropdown
@@ -34,3 +41,21 @@ Feature: Sauce Demo Products Page - Standard User
   Scenario: User Clicks On Shopping Cart - Standard User
     Given user clicks on the shopping cart
     Then user is on the "Your Cart" page
+
+  #Mario Start
+  Scenario Outline: User Clicks On Social Icon - Standard User
+    Given user is on the "Products" page
+    When user clicks on "<Icon>"
+    Then user is on the "<Icon>" page
+    Examples:
+    | Icon     |
+    | twitter  |
+    | facebook |
+    | linkedin |
+  #Mario End
+
+  #Mario Start
+  Scenario: Kill driver instance
+    Given driver instance is running
+    Then user kills driver instance
+  #Mario End

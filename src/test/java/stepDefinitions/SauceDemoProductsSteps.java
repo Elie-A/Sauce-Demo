@@ -43,4 +43,14 @@ public class SauceDemoProductsSteps extends TestBase{
     public void user_clicks_on_the_shopping_cart() {
         sauceDemoProductsPage.clickShoppingCart();
     }
+
+
+    @When("user clicks on {string}")
+    public void user_clicks_on(String arg0) {
+        sauceDemoSocialPage.clickSocial(arg0);
+    }
+
+    /* Mario Start */
+
+    /* Mario End */
 }

@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import managers.DriverManager;
 import org.testng.Assert;
+import pageObjects.SauceDemoSocialPage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,11 @@ public class SauceDemoLoginSteps extends TestBase{
             case "Products":
                 Assert.assertTrue(sauceDemoLoginPage.isOnProductsPage(page), "User is not on " + page + " page");
                 break;
+            /* Mario Start */
+            case "Social":
+                Assert.assertTrue(sauceDemoSocialPage.isOnSocialPage(page), "User is not on " + page + " page");
+                break;
+            /* Mario End */
             case "Your Cart":
                 Assert.assertTrue(sauceDemoCartPage.isOnCartPage(page), "User is not on " + page + " page");
                 break;

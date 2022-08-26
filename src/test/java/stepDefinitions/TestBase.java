@@ -16,6 +16,9 @@ public class TestBase {
     private static Logger LOGGER = LogManager.getLogger(DriverManager.class);
 
     public static SauceDemoLoginPage sauceDemoLoginPage;
+    /* Mario Start */
+    public static SauceDemoSocialPage sauceDemoSocialPage;
+    /* Mario End */
     public static SauceDemoMenuPage sauceDemoMenuPage;
     public static SauceDemoProductsPage sauceDemoProductsPage;
     public static SauceDemoCartPage sauceDemoCartPage;
@@ -34,6 +37,9 @@ public class TestBase {
 
     private static void initiateSauceDemoPages() throws Exception {
         sauceDemoLoginPage = new SauceDemoLoginPage(sauceDemoDriver);
+        /* Mario Start */
+        sauceDemoSocialPage = new SauceDemoSocialPage(sauceDemoDriver);
+        /* Mario End */
         sauceDemoMenuPage = new SauceDemoMenuPage(sauceDemoDriver);
         sauceDemoProductsPage = new SauceDemoProductsPage(sauceDemoDriver);
         sauceDemoCartPage = new SauceDemoCartPage(sauceDemoDriver);
