@@ -15,10 +15,10 @@ This project is the automation of https://www.saucedemo.com/ website.
 
 ### Dependencies
 
-* Java 8 - minimum
+* Java 11
 * Intellij
 * Cucumber for Java plugin
-* Maven 3.6.3 - minimum
+* Maven 3.6.3 - minimum / preferred Maven 3.9.1
 
 ### Installing
 
