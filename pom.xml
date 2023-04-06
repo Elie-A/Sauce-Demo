@@ -43,6 +43,7 @@
     </build>
 
     <dependencies>
+        <!-- Run test cases written in plain language -->
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -50,6 +51,7 @@
             <version>6.9.1</version>
         </dependency>
 
+        <!-- Convert cucumber json report to html report -->
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-html -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -57,6 +59,7 @@
             <version>0.2.7</version>
         </dependency>
 
+        <!-- Cobertura is a free Java tool that calculates the percentage of code accessed by tests -->
         <!-- https://mvnrepository.com/artifact/net.sourceforge.cobertura/cobertura -->
         <dependency>
             <groupId>net.sourceforge.cobertura</groupId>
@@ -65,6 +68,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Cucumber for Java -->
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -72,6 +76,7 @@
             <version>6.9.1</version>
         </dependency>
 
+        <!-- To prevent conflicts when Cucumber-JVM is used along with other project depending on the same libraries -->
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -80,6 +85,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Gherkin parser -->
         <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -87,6 +93,7 @@
             <version>16.0.0</version>
         </dependency>
 
+        <!-- Selenium support -->
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -94,12 +101,14 @@
             <version>3.141.59</version>
         </dependency>
 
+        <!-- Allow cucumber to share the state between multiple-step definition files (dependency injection) -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
             <version>6.9.1</version>
         </dependency>
 
+        <!-- TestNG framework in cucumber-->
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -107,12 +116,14 @@
             <version>6.9.1</version>
         </dependency>
 
+        <!-- Developing IO and filtering-->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.8.0</version>
         </dependency>
 
+        <!-- TestNG -->
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -121,6 +132,7 @@
         </dependency>
 
 
+        <!-- Logging -->
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -128,6 +140,7 @@
             <version>2.20.0</version>
         </dependency>
 
+        <!-- Extent report (test results report) -->
         <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber6-adapter -->
         <dependency>
             <groupId>tech.grasshopper</groupId>
@@ -136,6 +149,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Code inspection and documentation -->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
@@ -143,12 +157,14 @@
             <scope>compile</scope>
         </dependency>
 
+        <!-- Json parser -->
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
             <artifactId>json-simple</artifactId>
             <version>1.1.1</version>
         </dependency>
 
+        <!-- Automatic detection and download of browser driver -->
         <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
@@ -156,13 +172,13 @@
             <version>5.0.3</version>
         </dependency>
 
+        <!-- Data binding, json to java maps, lists, etc. -->
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.14.1</version>
         </dependency>
-
 
     </dependencies>
 </project>
